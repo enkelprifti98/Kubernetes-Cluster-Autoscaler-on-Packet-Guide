@@ -22,7 +22,6 @@ The cluster autoscaler needs a `ServiceAccount` with permissions for Kubernetes 
 
 `kubectl apply -f cluster-autoscaler-svcaccount.yaml`
 
-**Note**: you can also download the yaml file with wget and pass the local yaml file instead of the github url.
 
 ### Secret Deployment
 
