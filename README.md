@@ -16,11 +16,15 @@ The autoscaler will run as a `Deployment` in your cluster and the nodepool is sp
 
 First, you’ll need to download the necessary files in the [examples folder](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler/cloudprovider/packet/examples) . You can do this by cloning the autoscaler repository and copying the examples folder to your preferred location and then delete the autoscaler folder.
 
+### ServiceAccount Deployment
+
 The cluster autoscaler needs a `ServiceAccount` with permissions for Kubernetes and requires credentials for interacting with Packet. An example ServiceAccount is given in [examples/cluster-autoscaler-svcaccount.yaml](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/packet/examples/cluster-autoscaler-svcaccount.yaml) . You don’t need to edit anything to the sample file and can simply deploy the ServiceAccount with the following command:
 
 `kubectl apply -f cluster-autoscaler-svcaccount.yaml`
 
 Note: you can also download the yaml file with wget and pass the local yaml file instead of the github url.
+
+### Secret Deployment
 
 The credentials for authenticating with Packet are stored in a `secret` and provided as an environment variable to the autoscaler container. An example secret file is given in [examples/cluster-autoscaler-secret](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/packet/examples/cluster-autoscaler-secret.yaml) .  In this file you’ll need to modify the following fields:
 
@@ -43,6 +47,8 @@ The credentials for authenticating with Packet are stored in a `secret` and prov
 Once you’ve configured the secret file accordingly, you can deploy the secret as follows:
 
 `kubectl apply -f cluster-autoscaler-secret.yaml`
+
+### Autoscaler Deployment
 
 Next we’ll need to setup the nodepool and cluster names by using Packet tags. The Packet API does not yet have native support for groups or pools of devices, so we use tags to specify them. Each Packet device that is a member of the “cluster1” cluster should have the tag “k8s-cluster-cluster1”. The devices that are members of the “pool1” nodepool should also have the tag “k8s-nodepool-pool1”. Once you have a Kubernetes cluster running on Packet, use the Packet Portal or API to tag the nodes accordingly. The master node should have the cluster1 tag but not the pool1 tag as that is only needed for the worker nodepool that will be autoscaled. You can also simply have a master node without any worker nodes and the autoscaler will deploy new workers as needed. The tags should looks like the following images:
 
