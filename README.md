@@ -25,7 +25,7 @@ Note: you can also download the yaml file with wget and pass the local yaml file
 The credentials for authenticating with Packet are stored in a `secret` and provided as an environment variable to the autoscaler container. An example secret file is given in [examples/cluster-autoscaler-secret](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/packet/examples/cluster-autoscaler-secret.yaml) .  In this file you’ll need to modify the following fields:
 
 | Secret                          | Key                     | Value                        |
-|————————————————|————————————|——————————————————————————————————————————————————————————————————|
+|---------------------------------|-------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | cluster-autoscaler-packet       | authtoken               | Your Packet API token. It must be base64 encoded.                                                                                 |
 | cluster-autoscaler-cloud-config | Global/project-id       | Your Packet project id                                                                                                             |
 | cluster-autoscaler-cloud-config | Global/api-server       | The ip:port for you cluster’s k8s api (e.g. K8S_MASTER_PUBLIC_IP:6443) found in the kubeadm-config.yaml file.                                                            |
