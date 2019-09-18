@@ -58,8 +58,8 @@ Once you have setup the nodepool with the appropriate Packet tags, we can now co
 
 | Argument         | Usage                                                                                                      |
 |------------------|------------------------------------------------------------------------------------------------------------|
-| ——————————————————————————————————————————————————————cluster-name   | The name of your Kubernetes cluster. It should correspond to the tags that have been applied to the nodes. In this demo, it would be “cluster1”. |
-| ——————————————————————————————————————————————————————nodes          | Of the form `min:max:NodepoolName`. Only a single node pool is currently supported. NodepoolName would be “pool1” for this demo.                       |
+| --cluster-name   | The name of your Kubernetes cluster. It should correspond to the tags that have been applied to the nodes. In this demo, it would be “cluster1”. |
+| --nodes          | Of the form `min:max:NodepoolName`. Only a single node pool is currently supported. NodepoolName would be “pool1” for this demo.                        |
 
 
 Now you can deploy the autoscaler with the following command:
