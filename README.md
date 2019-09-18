@@ -47,11 +47,11 @@ Once you’ve configured the secret file accordingly, you can deploy the secret 
 Next we’ll need to setup the nodepool and cluster names by using Packet tags. The Packet API does not yet have native support for groups or pools of devices, so we use tags to specify them. Each Packet device that is a member of the “cluster1” cluster should have the tag “k8s-cluster-cluster1”. The devices that are members of the “pool1” nodepool should also have the tag “k8s-nodepool-pool1”. Once you have a Kubernetes cluster running on Packet, use the Packet Portal or API to tag the nodes accordingly. The master node should have the cluster1 tag but not the pool1 tag as that is only needed for the worker nodepool that will be autoscaled. You can also simply have a master node without any worker nodes and the autoscaler will deploy new workers as needed. The tags should looks like the following images:
 
 Master tags:
-!(https://github.com/enkelprifti98/Kubernetes-Cluster-Autoscaler-on-Packet-Guide/blob/master/images/master%20tags.png)
+![alt text](https://github.com/enkelprifti98/Kubernetes-Cluster-Autoscaler-on-Packet-Guide/blob/master/images/master%20tags.png)
 
 
 Worker tags:
-[image:EADAF687-A759-472E-8479-4A7020FD366A-96544-00010BB67EFF787A/worker tags.png]
+![alt text](https://github.com/enkelprifti98/Kubernetes-Cluster-Autoscaler-on-Packet-Guide/blob/master/images/worker%20tags.png)
 
 
 Once you have setup the nodepool with the appropriate Packet tags, we can now configure the autoscaler deployment. An example Deployment is given in examples/cluster-autoscaler-deployment.yaml but you’ll need to adjust the following arguments:
