@@ -22,7 +22,7 @@ The cluster autoscaler needs a `ServiceAccount` with permissions for Kubernetes 
 
 `kubectl apply -f cluster-autoscaler-svcaccount.yaml`
 
-Note: you can also download the yaml file with wget and pass the local yaml file instead of the github url.
+**Note**: you can also download the yaml file with wget and pass the local yaml file instead of the github url.
 
 ### Secret Deployment
 
@@ -84,7 +84,7 @@ You can also view live logs of the autoscaler container with the following comma
 
 To see the autoscaler in action, you can scale your deployment up and down and the autoscaler will create or remove nodes when needed.
 
-Note: It’s recommended to pair the autoscaler with the Packet CCM (Cloud Controller Manager) for Kubernetes as that takes care of the logical node objects being removed from the cluster. We have a guide on how to deploy the CCM to your cluster here.
+**Note**: It’s recommended to pair the autoscaler with the Packet CCM (Cloud Controller Manager) for Kubernetes as that takes care of the logical node objects being removed from the cluster. We have a guide on how to deploy the CCM to your cluster here.
 
 Congratulations! You have now setup the Kubernetes Cluster Autoscaler on your bare metal cluster on Packet.
 
