@@ -57,7 +57,7 @@ Worker tags:
 Once you have setup the nodepool with the appropriate Packet tags, we can now configure the autoscaler deployment. An example Deployment is given in examples/cluster-autoscaler-deployment.yaml but you’ll need to adjust the following arguments:
 
 | Argument         | Usage                                                                                                      |
-|—————————|——————————————————————————————————————————————————————|
+|------------------|------------------------------------------------------------------------------------------------------------|
 | ——————————————————————————————————————————————————————cluster-name   | The name of your Kubernetes cluster. It should correspond to the tags that have been applied to the nodes. In this demo, it would be “cluster1”. |
 | ——————————————————————————————————————————————————————nodes          | Of the form `min:max:NodepoolName`. Only a single node pool is currently supported. NodepoolName would be “pool1” for this demo.                       |
 
