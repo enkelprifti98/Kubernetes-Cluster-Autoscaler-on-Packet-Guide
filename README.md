@@ -27,7 +27,7 @@ The credentials for authenticating with Packet are stored in a `secret` and prov
 | Secret                          | Key                     | Value                        |
 |---------------------------------|-------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | cluster-autoscaler-packet       | authtoken               | Your Packet API token. It must be base64 encoded.                                                                                 |
-| cluster-autoscaler-cloud-config | Global/project-id       | Your Packet project id                                                                                                             |
+| cluster-autoscaler-cloud-config | Global/project-id       | Your Packet project ID.                                                                                                             |
 | cluster-autoscaler-cloud-config | Global/api-server       | The ip:port for you cluster’s k8s api (e.g. K8S_MASTER_PUBLIC_IP:6443) found in the kubeadm-config.yaml file.                                                            |
 | cluster-autoscaler-cloud-config | Global/facility         | The Packet facility for the devices in your nodepool (eg: ams1)                                                                    |
 | cluster-autoscaler-cloud-config | Global/plan             | The Packet plan (aka size/flavor) for new nodes in the nodepool (eg: t1.small.x86)                                                 |
@@ -35,7 +35,9 @@ The credentials for authenticating with Packet are stored in a `secret` and prov
 | cluster-autoscaler-cloud-config | Global/os               | The OS image to use for new nodes (default: ubuntu_18_04). If you change this also update cloudinit.                               |
 | cluster-autoscaler-cloud-config | Global/cloudinit        | The base64 encoded [user data](https://support.packet.com/kb/articles/user-data) submitted when provisioning devices. In the example file, the default value has been tested with Ubuntu 18.04 to install Docker & kubelet and then to bootstrap the node into the cluster using kubeadm. For a different base OS or bootstrap method, this needs to be customized accordingly.  |
 | cluster-autoscaler-cloud-config | Global/reservation      | The values “require” or “prefer” will request the next available hardware reservation for new devices in selected facility & plan. If no hardware reservations match, “require” will trigger a failure, while “prefer” will launch on-demand devices instead (default: none)  |
-| cluster-autoscaler-cloud-config | Global/hostname-pattern | The pattern for the names of new Packet devices (default: “k8s-{{.ClusterName}}-{{.NodeGroup}}-{{.RandString8}}” )                  | bootstrap-token-cluster-autoscaler-packet  | token-id   | You cluster token-id. If you don’t have a token setup, you can refer to the official K8s [guide](https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-token/) . | bootstrap-token-cluster-autoscaler-packet.  | token-secret  | You cluster token secret.  |
+| cluster-autoscaler-cloud-config | Global/hostname-pattern | The pattern for the names of new Packet devices (default: “k8s-{{.ClusterName}}-{{.NodeGroup}}-{{.RandString8}}” )                  
+| bootstrap-token-cluster-autoscaler-packet  | token-id   | You cluster token-id. If you don’t have a token setup, you can refer to the official K8s [guide](https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-token/) . 
+| bootstrap-token-cluster-autoscaler-packet.  | token-secret  | You cluster token secret.  |
 
 
 Once you’ve configured the secret file accordingly, you can deploy the secret as follows:
