@@ -74,11 +74,11 @@ Now you can deploy the autoscaler with the following command:
 
 You’ll notice that the autoscaler pod is now created by looking at the pods under the kube-system namespace:
 
-`kubectl get pods —namespace=kube-system`
+`kubectl get pods --namespace=kube-system`
 
 You can also view live logs of the autoscaler container with the following command:
 
-`kubectl logs <container-name> —namespace=kube-system`
+`kubectl logs <container-name> --namespace=kube-system`
 
 
 To see the autoscaler in action, you can scale your deployment up and down and the autoscaler will create or remove nodes when needed.
