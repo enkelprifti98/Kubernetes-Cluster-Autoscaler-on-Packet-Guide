@@ -25,7 +25,7 @@ The cluster autoscaler needs a `ServiceAccount` with permissions for Kubernetes 
 
 ### Secret Deployment
 
-The credentials for authenticating with Packet are stored in a `secret` and provided as an environment variable to the autoscaler container. An example secret file is given in [examples/cluster-autoscaler-secret](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/packet/examples/cluster-autoscaler-secret.yaml) .  In this file you’ll need to modify the following fields:
+The credentials for authenticating with Packet are stored in a `secret` and provided as an environment variable to the autoscaler container. An example secret file is given in [examples/cluster-autoscaler-secret.yaml](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/packet/examples/cluster-autoscaler-secret.yaml) .  In this file you’ll need to modify the following fields:
 
 | Secret                          | Key                     | Value                        |
 |---------------------------------|-------------------------|------------------------------------------------------------------------------------------------------------------------------------|
@@ -59,7 +59,7 @@ Worker tags:
 ![alt text](https://github.com/enkelprifti98/Kubernetes-Cluster-Autoscaler-on-Packet-Guide/blob/master/images/worker%20tags.png)
 
 
-Once you have setup the nodepool with the appropriate Packet tags, we can now configure the autoscaler deployment. An example Deployment is given in examples/cluster-autoscaler-deployment.yaml but you’ll need to adjust the following arguments:
+Once you have setup the nodepool with the appropriate Packet tags, we can now configure the autoscaler deployment. An example Deployment is given in [examples/cluster-autoscaler-deployment.yaml](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/packet/examples/cluster-autoscaler-deployment.yaml).yaml but you’ll need to adjust the following arguments:
 
 | Argument         | Usage                                                                                                      |
 |------------------|------------------------------------------------------------------------------------------------------------|
